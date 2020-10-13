@@ -52,8 +52,6 @@
     "eslint-config-prettier": "^6.12.0",
     "gh-pages": "^3.1.0",
     "husky": "^4.3.0",
-    "isomorphic-fetch": "^2.2.1",
-    "isomorphic-form-data": "^2.0.0",
     "jasmine": "^3.6.1",
     "karma": "^5.2.3",
     "karma-chrome-launcher": "^3.1.0",
@@ -80,13 +78,15 @@
     "typedoc": "^0.19.2",
     "typedoc-plugin-external-module-name": "^4.0.3",
     "typedoc-plugin-pages": "^1.0.1",
-    "typescript": "^4.0.3"
-  },
-  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.11.0",
     "lerna": "^3.22.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-form-data": "^2.0.0"
   },
   "husky": {
     "hooks": {
