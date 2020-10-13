@@ -37,7 +37,7 @@
   ],
   "author": "dbouwman@esri.com",
   "license": "Apache-2.0",
-  "dependencies": {
+  "devDependencies": {
     "@chiragrupani/karma-chromium-edge-launcher": "^2.0.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
@@ -83,14 +83,15 @@
     "eslint": "^7.11.0",
     "lerna": "^3.22.1"
   },
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^4.0.3",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-form-data": "^2.0.0"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn test"
     }
   }
 }
