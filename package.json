@@ -106,7 +106,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "@commitlint/prompt"
+      "path": "cz-lerna-changelog"
     }
   }
 }
