@@ -12,5 +12,7 @@ docs
 
 
 # Root folder files
+umd-base-profile.js
+umd-production-profile.js
 commitlint.config.js
 .typedoc-plugin-external-module-name.js
