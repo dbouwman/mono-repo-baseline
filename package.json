@@ -99,9 +99,8 @@
     "isomorphic-form-data": "^2.0.0",
     "typescript": "^4.0.3"
   },
-  "huskyout": {
+  "husky": {
     "hooks": {
-      "prepare-commit-msg": "commit-template",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

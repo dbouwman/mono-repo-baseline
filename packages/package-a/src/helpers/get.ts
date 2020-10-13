@@ -1,6 +1,7 @@
 /**
  * Get an item
  * @param id: Item Id
+ * Returns promose
  */
 export function get(id: string): Promise<string> {
   return Promise.resolve(id);
