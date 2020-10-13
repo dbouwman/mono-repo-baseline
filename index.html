@@ -82,18 +82,46 @@
 							<li>custom handling of external module naming</li>
 						</ul>
 					</li>
-					<li>conventional-changelog tooling, including<ul>
+					<li><a href="https:#www.conventionalcommits.org/en/v1.0.0/#summary">conventional commits</a> tooling, including<ul>
 							<li>husky for commit hooks</li>
-							<li>commit message templating</li>
 							<li>commit linting to ensure consistentcy</li>
+							<li>commitizen to make it easy (<code>yarn c</code>)</li>
 						</ul>
 					</li>
+					<li>Use <a href="https:#github.com/zeke/semantic-pull-requests">Semantic Pull Requests</a> to ensure PR has at least one semantic commit</li>
 					<li>travis-ci tooling for<ul>
 							<li>automated, semantic-releases</li>
 							<li>probot to ensure PR&#39;s have at least one semantic commit before allowing merge</li>
 						</ul>
 					</li>
 				</ul>
+				<a href="#commits" id="commits" style="color: inherit; text-decoration: none;">
+					<h2>Commits</h2>
+				</a>
+				<p>Commit messages must follow the conventional commit format:</p>
+				<pre><code><span class="hljs-keyword">type</span>(scope?): message</code></pre>
+				<p>Type must be one of <code>[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]</code></p>
+				<p>Scope is optional, but if you put in the <code>( )</code>&#39;s then the scope must be a valid package name. Multiple packages can be separated by commas</p>
+				<p>Breaking changes are denoted with a <code>!</code> before the <code>:</code></p>
+				<p>You can use the command line or tooling to create commits, as long as they follow this format. If they do not, you will recieve an error, and the commit will not be processed.</p>
+				<p><em>Note</em> Although you could use <code>--no verify</code>, unless you have at least one commit that follows this convention, your PR will be blocked from merging.</p>
+				<p><code>git commit</code> Examples:</p>
+				<pre><code class="language-sh">$ git commit -m <span class="hljs-string">&#x27;docs: add new section to guide&#x27;</span>
+<span class="hljs-comment"># type: docs, scope: omitted</span>
+<span class="hljs-comment"># When merged to master, no release will happen, but docs will be deployed</span>
+
+$ git commit -m <span class="hljs-string">&#x27;fix(package-a, package-b): update the flux inverter&#x27;</span>
+<span class="hljs-comment"># type: fix, scope: package-a and package-b</span>
+<span class="hljs-comment"># When merged to master, a PATCH release will happen, docs will be deployed</span>
+
+$ git commit -m <span class="hljs-string">&#x27;feat(package-b): add houston adapter&#x27;</span>
+<span class="hljs-comment"># type: feat, scope: package-b</span>
+<span class="hljs-comment"># When merged to master, a MINOR release will happen, docs will be deployed</span>
+
+$ git commit -m <span class="hljs-string">&#x27;fix(package-a)!: fix the greet function and require an additional parameter&#x27;</span>
+<span class="hljs-comment"># type: fix, scope: package-a, ! means a breaking change, and the message</span>
+<span class="hljs-comment"># When merged to master, a MAJOR release will happen, docs will be deployed</span></code></pre>
+				<p>Or you can use <code>yarn c</code> which will walk you through the same information using <a href="https://commitizen.github.io/cz-cli/">commitizen</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
