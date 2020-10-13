@@ -49,7 +49,7 @@ const copyright = `/* @preserve
 const moduleName = "arcgisSolution";
 const arcgisRestModuleName = "arcgisRest";
 const hubModuleName = "arcgisHub";
-console.info(`umd-base-profile:: __dirname ${__dirname}`);
+// remove the support path off to get the repo root
 const rootDir = __dirname.split("/support")[0];
 /**
  * Now we need to discover all the `@esri/solution-*` package names so we can create
