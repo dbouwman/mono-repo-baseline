@@ -16,6 +16,7 @@
     "clean:dist": "rm -rf packages/*/dist/ && rm -rf packages/*/.rpt2_cache",
     "deepclean": "rm -rf ./node_modules && rm -rf packages/*/node_modules && npm run clean",
     "docs:build": "rimraf docs/build && npm run docs:typedoc",
+    "docs:deploy": "npm run docs:build && node scripts/deploy-doc-site.js",
     "docs:typedoc": "typedoc",
     "lint": "eslint ./packages --ext .ts",
     "lint:fix": "tslint --project tsconfig.json --exclude '**/*.d.ts' --fix",
