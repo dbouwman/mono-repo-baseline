@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Core Maintainers | mono-repo-baseline - v0.0.1-alpha</title>
+	<meta name="description" content="Documentation for mono-repo-baseline - v0.0.1-alpha">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../assets/css/main.css">
+	<link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.json" data-base="../..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../../index.html" class="title">mono-repo-baseline - v0.0.1-alpha</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="core-maintainers.html">Guides</a>
+				</li>
+				<li>
+					<a href="core-maintainers.html">Core Maintainers</a>
+				</li>
+			</ul>
+			<h1>Core Maintainers</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#development-philosophy" id="development-philosophy" style="color: inherit; text-decoration: none;">
+					<h2>Development Philosophy</h2>
+				</a>
+				<a href="#consistent-documentation-and-naming" id="consistent-documentation-and-naming" style="color: inherit; text-decoration: none;">
+					<h4>Consistent Documentation and Naming</h4>
+				</a>
+				<ul>
+					<li>function and variable names should express what something <em>is</em> or what a function <em>does</em> <em>in the context of the &quot;process&quot;</em></li>
+					<li>jsdoc comments that explain the &quot;why&quot; behind what is being done in a function, in addition to what is happening</li>
+					<li>guides should be created focusing on: <ul>
+							<li>maintainers of the Solution.js core</li>
+							<li>developers and maintainers of the Processors</li>
+							<li>developers who consume Solution.js</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#focus-on-functional-style-programming" id="focus-on-functional-style-programming" style="color: inherit; text-decoration: none;">
+					<h4>Focus on Functional-Style Programming</h4>
+				</a>
+				<ul>
+					<li>the vast majority of the code should be in functions</li>
+					<li>functions should have a single <code>return</code></li>
+					<li>functions should have flat promise chains</li>
+					<li>functions should have focused unit tests that only exercise logic <em>in the function</em>. Mock implementations should be used instead of allowing delegation into other functions. These tests should drive code-coverage reporting.</li>
+					<li>separate &quot;integration&quot; tests should be created to ensure wholistic behavior is correct. These should not count towards code-coverage</li>
+					<li>separate &quot;end-to-end&quot; tests should be created which run against actual items, in actual orgs, to ensure that everything actually works, and to track performance over time. Hub team has multiple orgs that exist specifically for this purpose, and can create users specifically for this testing.</li>
+					<li>functions must not rely on side-effects. <ul>
+							<li>output of a function must depend entirely on arguments passed in.</li>
+							<li>callbacks may be used to indicate progress, but this should not be pushed deep down the stack. The outcome of a process should be returned to the caller via Promise resolution/rejection only.</li>
+						</ul>
+					</li>
+					<li>asynchronous functions (i.e. which make web requests), must return <code>Promises</code>.</li>
+					<li>when calling asynchronous functions, caller must depend on the <code>Promise</code> resolution/rejection only.</li>
+				</ul>
+				<a href="#few-quotthinquot-classes" id="few-quotthinquot-classes" style="color: inherit; text-decoration: none;">
+					<h4>Few, &quot;thin&quot; Classes</h4>
+				</a>
+				<p>There are a few places where we will use <code>Class</code> in situations where having internal state is beneficial. However, these classes will be very &quot;thin&quot; in that their methods will simply delegate out to functions. Internal state should be minimized.</p>
+				<a href="#messaging" id="messaging" style="color: inherit; text-decoration: none;">
+					<h4>Messaging</h4>
+				</a>
+				<ul>
+					<li>All messages returned from the library should use <code>ITranslatableMessage</code> to enable translation</li>
+					<li>directly import rest-js functions vs using wrappers from <code>common</code></li>
+					<li>remove <code>@license</code> directive from all but top-level exports as it massively bloats webpack based builds using the library</li>
+					<li>consistent use of <code>changelog</code>, perhaps using <a href="https://github.com/commitizen/cz-cli">commitizen</a>. Having a consistently mainatined changelog will become critical as project gets more developers and more consumers.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label pp-nav pp-group">
+						<span>Guides</span>
+					</li>
+					<li class="current pp-nav pp-page">
+						<a href="core-maintainers.html">Core <wbr>Maintainers</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="processor-maintainers.html">Processor <wbr>Maintainers</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="consumers.html">Using <wbr>Solution.js</a>
+					</li>
+					<li class="label pp-nav pp-group">
+						<span>API</span>
+					</li>
+					<li class="globals  ">
+						<a href="../../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/package_a.html">package-<wbr>a</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/package_b.html">package-<wbr>b</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.json"><' + '/script>');</script>
+</body>
+</html>
