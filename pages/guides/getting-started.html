@@ -3,18 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>mono-repo-baseline - v0.0.1-alpha</title>
+	<title>Getting Started | mono-repo-baseline - v0.0.1-alpha</title>
 	<meta name="description" content="Documentation for mono-repo-baseline - v0.0.1-alpha">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="assets/css/pages.css">
+	<link rel="stylesheet" href="../../assets/css/main.css">
+	<link rel="stylesheet" href="../../assets/css/pages.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.json" data-base="../..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">mono-repo-baseline - v0.0.1-alpha</a>
+					<a href="../../index.html" class="title">mono-repo-baseline - v0.0.1-alpha</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,10 +54,16 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="getting-started.html">Guides</a>
+				</li>
+				<li>
+					<a href="getting-started.html">Getting Started</a>
 				</li>
 			</ul>
-			<h1>mono-repo-baseline - v0.0.1-alpha</h1>
+			<h1>Getting Started</h1>
 		</div>
 	</div>
 </header>
@@ -65,46 +71,49 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#monorepo-baseline" id="monorepo-baseline" style="color: inherit; text-decoration: none;">
-					<h1>Monorepo Baseline</h1>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h1>Getting Started</h1>
 				</a>
-				<p>Example monorepo that has the following:</p>
+				<a href="#developers" id="developers" style="color: inherit; text-decoration: none;">
+					<h2>Developers</h2>
+				</a>
 				<ul>
-					<li>yarn workspaces w/ lerna</li>
-					<li>typescript with<ul>
-							<li>umd, commonjs and esm output</li>
-							<li>jasmine tests, running in browsers and node</li>
-							<li>eslint for typescript</li>
+					<li>install git</li>
+					<li>install volta to manage your node versions</li>
+					<li>install yarn, lerna as globals via volta</li>
+					<li>install visual studio code (recommended)<ul>
+							<li><em>Windows</em>: set visual studio code to use git-bash as the terminal, and use that for git operations as we have ensured that commitizen (<code>yarn c</code>) works well in that environment</li>
+							<li>plugins:<ul>
+									<li>Document This - jsdoc generator</li>
+									<li>eslint - automate linting in the editor</li>
+									<li>prettier code formatter<ul>
+											<li>ensure you have &quot;Format on save&quot; set in VSCode settings</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
 						</ul>
 					</li>
-					<li>typedoc with<ul>
-							<li>markdown page support</li>
-							<li>custom handling of external module naming</li>
-						</ul>
-					</li>
-					<li><a href="https:#www.conventionalcommits.org/en/v1.0.0/#summary">conventional commits</a> tooling, including<ul>
-							<li>husky for commit hooks</li>
-							<li>commit linting to ensure consistentcy</li>
-							<li>commitizen to make it easy (<code>yarn c</code>)</li>
-						</ul>
-					</li>
-					<li>Use <a href="https:#github.com/zeke/semantic-pull-requests">Semantic Pull Requests</a> to ensure PR has at least one semantic commit</li>
-					<li>travis-ci tooling for<ul>
-							<li>automated, semantic-releases</li>
-							<li>probot to ensure PR&#39;s have at least one semantic commit before allowing merge</li>
-						</ul>
-					</li>
+					<li>clone repo locally</li>
+					<li>code!</li>
+					<li>commit using <code>yarn c</code> or follow the directions below</li>
+				</ul>
+				<a href="#windows-developers" id="windows-developers" style="color: inherit; text-decoration: none;">
+					<h2>Windows Developers</h2>
+				</a>
+				<ul>
+					<li>to use volta, you should set your device into &quot;Developer Mode&quot;</li>
 				</ul>
 				<a href="#commits" id="commits" style="color: inherit; text-decoration: none;">
 					<h2>Commits</h2>
 				</a>
-				<p>Commit messages must follow the conventional commit format:</p>
-				<pre><code><span class="hljs-keyword">type</span>(scope?): message</code></pre>
-				<p>Type must be one of <code>[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]</code></p>
+				<p>Commit messages must follow the &quot;conventional commit&quot; format, and will be rejected if they do not follow this format:</p>
+				<pre><code class="language-sh"><span class="hljs-built_in">type</span>(scope?): message</code></pre>
+				<p>Type must be one of <code>build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test</code></p>
 				<p>Scope is optional, but if you put in the <code>( )</code>&#39;s then the scope must be a valid package name. Multiple packages can be separated by commas</p>
 				<p>Breaking changes are denoted with a <code>!</code> before the <code>:</code></p>
 				<p>You can use the command line or tooling to create commits, as long as they follow this format. If they do not, you will recieve an error, and the commit will not be processed.</p>
-				<p><em>Note</em> Although you could use <code>--no verify</code>, unless you have at least one commit that follows this convention, your PR will be blocked from merging.</p>
+				<p><em>Note</em> Although you could use <code>--no-verify</code>, and we recommend using that before doing a rebase, unless you have at least one commit that follows this convention, your PR will be blocked from merging.</p>
 				<p><code>git commit</code> Examples:</p>
 				<pre><code class="language-sh">$ git commit -m <span class="hljs-string">&#x27;docs: add new section to guide&#x27;</span>
 <span class="hljs-comment"># type: docs, scope: omitted</span>
@@ -122,6 +131,12 @@ $ git commit -m <span class="hljs-string">&#x27;fix(package-a)!: fix the greet f
 <span class="hljs-comment"># type: fix, scope: package-a, ! means a breaking change, and the message</span>
 <span class="hljs-comment"># When merged to master, a MAJOR release will happen, docs will be deployed</span></code></pre>
 				<p>Or you can use <code>yarn c</code> which will walk you through the same information using <a href="https://commitizen.github.io/cz-cli/">commitizen</a></p>
+				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
+					<h2>TODO:</h2>
+				</a>
+				<ul>
+					<li>add links &amp; details</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -130,29 +145,29 @@ $ git commit -m <span class="hljs-string">&#x27;fix(package-a)!: fix the greet f
 					<li class="label pp-nav pp-group">
 						<span>Guides</span>
 					</li>
-					<li class=" pp-nav pp-page">
-						<a href="pages/guides/getting-started.html">Getting <wbr>Started</a>
+					<li class="current pp-nav pp-page">
+						<a href="getting-started.html">Getting <wbr>Started</a>
 					</li>
 					<li class=" pp-nav pp-page">
-						<a href="pages/guides/core-maintainers.html">Core <wbr>Maintainers</a>
+						<a href="core-maintainers.html">Core <wbr>Maintainers</a>
 					</li>
 					<li class=" pp-nav pp-page">
-						<a href="pages/guides/processor-maintainers.html">Processor <wbr>Maintainers</a>
+						<a href="processor-maintainers.html">Processor <wbr>Maintainers</a>
 					</li>
 					<li class=" pp-nav pp-page">
-						<a href="pages/guides/consumers.html">Using <wbr>Solution.js</a>
+						<a href="consumers.html">Using <wbr>Solution.js</a>
 					</li>
 					<li class="label pp-nav pp-group">
 						<span>API</span>
 					</li>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/package_a.html">package-<wbr>a</a>
+						<a href="../../modules/package_a.html">package-<wbr>a</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/package_b.html">package-<wbr>b</a>
+						<a href="../../modules/package_b.html">package-<wbr>b</a>
 					</li>
 				</ul>
 			</nav>
@@ -174,7 +189,7 @@ $ git commit -m <span class="hljs-string">&#x27;fix(package-a)!: fix the greet f
 	</div>
 </footer>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.json"><' + '/script>');</script>
+<script src="../../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.json"><' + '/script>');</script>
 </body>
 </html>
