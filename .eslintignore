@@ -16,3 +16,6 @@ umd-base-profile.js
 umd-production-profile.js
 commitlint.config.js
 .typedoc-plugin-external-module-name.js
+
+# Templates
+templates/*

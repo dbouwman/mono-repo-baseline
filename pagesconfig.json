@@ -1,24 +1,28 @@
 {
-    "groups": [
+  "groups": [
+    {
+      "title": "Guides",
+      "source": "./docs/src/guides",
+      "output": "guides",
+      "pages": [
         {
-            "title": "Guides",
-            "source": "./docs/src/guides",
-            "output": "guides",
-            "pages": [
-                {
-                    "title": "Core Maintainers",
-                    "source": "core-maintainers.md"
-                },
-                {
-                    "title": "Processor Maintainers",
-                    "source": "processor-maintainers.md"
-                },
-                {
-                    "title": "Using Solution.js",
-                    "source": "consumers.md"
-                }
-            ]
+          "title": "Getting Started",
+          "source": "getting-started.md"
+        },
+        {
+            "title": "Core Maintainers",
+            "source": "core-maintainers.md"
+        },
+        {
+            "title": "Processor Maintainers",
+            "source": "processor-maintainers.md"
+        },
+        {
+            "title": "Using Solution.js",
+            "source": "consumers.md"
         }
-    ],
-    "theme": "pages-plugin"
+      ]
+    }
+  ],
+  "theme": "pages-plugin"
 }
