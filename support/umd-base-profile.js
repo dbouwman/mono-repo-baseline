@@ -50,7 +50,7 @@ const moduleName = "arcgisSolution";
 const arcgisRestModuleName = "arcgisRest";
 const hubModuleName = "arcgisHub";
 // remove the support path off to get the repo root
-const rootDir = __dirname.split("/support")[0];
+const rootDir = __dirname.split("support")[0];
 /**
  * Now we need to discover all the `@esri/solution-*` package names so we can create
  * the `globals` and `externals` to pass to Rollup.
