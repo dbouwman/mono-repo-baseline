@@ -15,7 +15,7 @@
     "clean": "npm run clean:src && npm run clean:dist && npm run docs:clean",
     "clean:src": "rimraf packages/*/{src,test}/*.{d.ts,js,js.map} && rimraf packages/*/{src,test}/**/*.{d.ts,js,js.map}",
     "clean:dist": "rimraf packages/*/dist/ && rimraf packages/*/.rpt2_cache",
-    "deepclean": "rimraf ./node_modules && rimraf packages/*/node_modules && npm run clean",
+    "deepclean": "rimraf packages/*/node_modules && npm run clean && rimraf ./node_modules",
     "docs:build": "npm run docs:clean && npm run docs:typedoc",
     "docs:clean": "rimraf docs/build",
     "docs:deploy": "npm run docs:build && node scripts/deploy-doc-site.js",
