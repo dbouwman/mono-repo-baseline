@@ -48,6 +48,9 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
+    "@commitlint/prompt": "^11.0.0",
+    "commitizen": "^4.2.1",
+    "cz-lerna-changelog": "^2.0.3",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
@@ -61,6 +64,7 @@
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.12.0",
     "gh-pages": "^3.1.0",
+    "husky": "^4.3.0",
     "jasmine": "^3.6.1",
     "karma": "^5.2.3",
     "karma-chrome-launcher": "^3.1.0",
@@ -74,6 +78,7 @@
     "karma-typescript-es6-transform": "^5.2.0",
     "lerna": "^3.22.1",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "rollup": "^2.29.0",
     "rollup-plugin-filesize": "^9.0.2",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -90,11 +95,6 @@
     "typedoc-plugin-pages": "^1.0.1"
   },
   "dependencies": {
-    "@commitlint/prompt": "^11.0.0",
-    "commit-template": "^1.0.0",
-    "commitizen": "^4.2.1",
-    "cz-lerna-changelog": "^2.0.3",
-    "husky": "^4.3.0",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-form-data": "^2.0.0",
     "typescript": "^4.0.3"
